@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle } from 'lucide-react';
 
 export default function FloatingCTA() {
   const [isVisible, setIsVisible] = useState(false);
@@ -16,7 +15,7 @@ export default function FloatingCTA() {
   }, []);
 
   const whatsappLink =
-    'https://wa.me/5561981459740?text=Esse%20%C3%A9%20um%20teste%20pra%20ver%20ser%20funciona%20mesmo.';
+    'https://wa.me/5561982335278?text=Esse%20%C3%A9%20um%20teste%20pra%20ver%20ser%20funciona%20mesmo.';
 
   return (
     <AnimatePresence>
@@ -46,7 +45,11 @@ export default function FloatingCTA() {
             rel="noopener noreferrer"
             className="group flex items-center gap-2 bg-yellow-500 hover:bg-yellow-400 text-slate-950 font-bold px-6 py-3 rounded-full shadow-lg shadow-yellow-500/25 transition-all duration-300 hover:scale-105"
           >
-            <MessageCircle className="w-5 h-5" />
+            <img
+              src="https://i.postimg.cc/dtX7BdJv/Icone-Whats-img-removebg-preview.png"
+              alt="WhatsApp"
+              className="w-5 h-5"
+            />
             <span className="hidden sm:inline">WhatsApp</span>
           </a>
         </motion.div>
