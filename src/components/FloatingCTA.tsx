@@ -43,7 +43,7 @@ export default function FloatingCTA() {
             className="bg-slate-900 border border-yellow-500/30 rounded-lg px-4 py-2 shadow-lg max-w-xs"
           >
             <p className="text-sm text-white">
-              
+              Converse pelo whatsapp e tire suas dúvidas!
             </p>
           </motion.div>
 
@@ -53,7 +53,7 @@ export default function FloatingCTA() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Abrir conversa no WhatsApp"
-            className="group flex items-center gap-2 bg-green-500 hover:bg-green-400 text-slate-950 font-bold px-6 py-3 rounded-full shadow-lg shadow-yellow-500/25 transition-all duration-300 hover:scale-105"
+            className="group flex items-center gap-2 bg-yellow-500 hover:bg-yellow-400 text-slate-950 font-bold px-6 py-3 rounded-full shadow-lg shadow-yellow-500/25 transition-all duration-300 hover:scale-105"
           >
             <img
               src="https://i.postimg.cc/prwfLQfv/Icone-Whats-img8-removebg-preview.png"
@@ -62,7 +62,7 @@ export default function FloatingCTA() {
             />
 
             <span className="hidden sm:inline">
-              Falar com especialista
+              
             </span>
           </a>
         </motion.div>
