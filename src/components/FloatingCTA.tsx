@@ -53,10 +53,10 @@ export default function FloatingCTA() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Abrir conversa no WhatsApp"
-            className="group flex items-center gap-2 bg-yellow-500 hover:bg-yellow-400 text-slate-950 font-bold px-6 py-3 rounded-full shadow-lg shadow-yellow-500/25 transition-all duration-300 hover:scale-105"
+            className="group flex items-center gap-2 bg-green-500 hover:bg-green-400 text-slate-950 font-bold px-6 py-3 rounded-full shadow-lg shadow-yellow-500/25 transition-all duration-300 hover:scale-105"
           >
             <img
-              src="https://i.postimg.cc/g2STGQxf/Icone-Whats-img5-removebg-preview.png"
+              src="https://i.postimg.cc/d0rYxJ1F/Icone-Whats-img6.png"
               alt="Ícone do WhatsApp"
               className="w-5 h-5 object-contain"
             />
