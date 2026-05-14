@@ -6,9 +6,12 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig(async () => {
   const plugins = [react(), tailwindcss()];
   try {
-    // @ts-ignore
-    const m = await import('./.vite-source-tags.js');
-    plugins.push(m.sourceTags());
-  } catch {}
-  return { plugins };
-})
+    return {
+      plugins,
+      base: '/AraujoeAlves_lp/', // 👈 adiciona o caminho do repositório aqui
+    };
+  } catch (error) {
+    console.error(error);
+    return { plugins, base: '/AraujoeAlves_lp/' };
+  }
+});
