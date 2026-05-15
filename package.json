@@ -7,7 +7,11 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+
+    "deploy": "npm run build && powershell -Command \"if (Test-Path docs) { Remove-Item docs/* -Recurse -Force }\" && powershell -Command \"Copy-Item dist/* docs/ -Recurse -Force\" && git add . && git commit -m \"Atualização automática\" && git push origin main",
+
+    "auto": "npm run deploy"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.99.1",
