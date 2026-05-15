@@ -39,7 +39,7 @@ export default function Header() {
               <div className="relative">
                 <div className="absolute -inset-1 bg-gradient-to-r from-yellow-500/30 to-amber-500/30 rounded-lg blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <img
-                  src="/images/logo.png"
+                  src="https://i.postimg.cc/mrB10S91/Logo-house-PQ-removebg-preview.png"
                   alt="Araujo & Alves Advogados"
                   className="relative w-10 h-10 object-contain"
                 />

@@ -10,7 +10,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <img
-                src="/images/logo.png"
+                src="https://i.postimg.cc/mrB10S91/Logo-house-PQ-removebg-preview.png"
                 alt="Araujo & Alves Advogados"
                 className="w-10 h-10 object-contain"
               />
@@ -36,7 +36,7 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-center gap-2 text-sm text-slate-400">
                 <Phone className="w-4 h-4 text-yellow-500" />
-                <span>(61) 98403-0871</span>
+                <span>(61) 98233-5278</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-slate-400">
                 <Mail className="w-4 h-4 text-yellow-500" />
