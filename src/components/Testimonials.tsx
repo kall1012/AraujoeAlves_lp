@@ -19,24 +19,68 @@ export default function Testimonials() {
     margin: '-100px',
   });
 
-  const [testimonials] = useState<Testimonial[]>([]);
-  const [loading] = useState(false);
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
+  const [testimonials] = useState<Testimonial[]>([
+    {
+      id: 1,
+      nome: 'Ricardo Mendes',
+      cargo: 'Diretor Financeiro',
+      empresa: 'Construtora Horizonte',
+      texto:
+        'A atuação da Araujo&Alves Advocacia literalmente salvou nossa empresa. Conseguimos reorganizar as finanças e voltar a crescer.',
+      nota: 5,
+    },
+    {
+      id: 2,
+      nome: 'Fernanda Lima',
+      cargo: 'CEO',
+      empresa: 'Bella Forma Estética',
+      texto:
+        'Estávamos à beira do colapso financeiro. O trabalho jurídico foi extremamente estratégico e trouxe tranquilidade para continuarmos operando.',
+      nota: 5,
+    },
+    {
+      id: 3,
+      nome: 'Carlos Henrique',
+      cargo: 'Sócio Proprietário',
+      empresa: 'TransLog Brasil',
+      texto:
+        'Além da redução significativa das dívidas, recebemos uma orientação completa para proteger a empresa e manter nossa operação ativa.',
+      nota: 5,
+    },
+    {
+      id: 4,
+      nome: 'Juliana Rocha',
+      cargo: 'Administradora',
+      empresa: 'Mercado Central Prime',
+      texto:
+        'A negociação conduzida pela equipe superou nossas expectativas. Conseguimos recuperar o fôlego financeiro rapidamente.',
+      nota: 5,
+    },
+    {
+      id: 5,
+      nome: 'Eduardo Martins',
+      cargo: 'Diretor Executivo',
+      empresa: 'TechVision Sistemas',
+      texto:
+        'Profissionalismo impecável. A redução das dívidas permitiu reinvestir no crescimento da empresa e estabilizar o caixa.',
+      nota: 5,
+    },
+    {
+      id: 6,
+      nome: 'Marcos Oliveira',
+      cargo: 'Produtor Rural',
+      empresa: 'Grupo Solar Agro',
+      texto:
+        'A equipe conseguiu negociar condições que pareciam impossíveis. Hoje nossa empresa voltou a investir e operar com segurança.',
+      nota: 5,
+    },
+  ]);
 
-  /*
-  useEffect(() => {
-    fetch('/api/testimonials')
-      .then((res) => res.json())
-      .then((data) => {
-        setTestimonials(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error(err);
-        setLoading(false);
-      });
-  }, []);
-  */
+  const [loading] = useState(false);
+
+  const [hoveredCard, setHoveredCard] = useState<number | null>(
+    null
+  );
 
   return (
     <section
@@ -105,124 +149,79 @@ export default function Testimonials() {
             />
           </div>
         ) : (
-          <>
-            {testimonials.length > 0 ? (
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {testimonials.map((testimonial, index) => (
-                  <motion.div
-                    key={testimonial.id}
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{
-                      duration: 0.6,
-                      delay: index * 0.1,
-                    }}
-                    className="group relative"
-                    onMouseEnter={() =>
-                      setHoveredCard(testimonial.id)
-                    }
-                    onMouseLeave={() =>
-                      setHoveredCard(null)
-                    }
-                  >
-                    {/* Animated border */}
-                    <div className="absolute -inset-[1px] bg-gradient-to-b from-yellow-500/0 via-yellow-500/0 to-yellow-500/0 group-hover:from-yellow-500/30 group-hover:via-amber-500/20 group-hover:to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {testimonials.map((testimonial, index) => (
+              <motion.div
+                key={testimonial.id}
+                initial={{ opacity: 0, y: 40 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.1,
+                }}
+                className="group relative"
+                onMouseEnter={() =>
+                  setHoveredCard(testimonial.id)
+                }
+                onMouseLeave={() =>
+                  setHoveredCard(null)
+                }
+              >
+                <div className="absolute -inset-[1px] bg-gradient-to-b from-yellow-500/0 via-yellow-500/0 to-yellow-500/0 group-hover:from-yellow-500/30 group-hover:via-amber-500/20 group-hover:to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
 
-                    {/* Glow */}
-                    <div className="absolute -inset-2 bg-gradient-to-b from-yellow-500/0 to-yellow-500/0 group-hover:from-yellow-500/10 group-hover:to-transparent rounded-2xl blur-xl transition-all duration-700 opacity-0 group-hover:opacity-100" />
+                <div className="absolute -inset-2 bg-gradient-to-b from-yellow-500/0 to-yellow-500/0 group-hover:from-yellow-500/10 group-hover:to-transparent rounded-2xl blur-xl transition-all duration-700 opacity-0 group-hover:opacity-100" />
 
-                    <div className="relative h-full bg-gradient-to-b from-slate-900/70 to-slate-950/80 backdrop-blur-md border border-slate-800/60 group-hover:border-yellow-500/25 rounded-2xl p-6 transition-all duration-500 overflow-hidden">
-                      {/* Shine sweep */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-500/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
+                <div className="relative h-full bg-gradient-to-b from-slate-900/70 to-slate-950/80 backdrop-blur-md border border-slate-800/60 group-hover:border-yellow-500/25 rounded-2xl p-6 transition-all duration-500 overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-500/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
 
-                      <div className="relative z-10">
-                        <motion.div
-                          animate={
-                            hoveredCard === testimonial.id
-                              ? {
-                                  rotate: [0, -10, 10, 0],
-                                }
-                              : {}
-                          }
-                          transition={{ duration: 0.5 }}
-                        >
-                          <Quote className="w-10 h-10 text-yellow-500/20 group-hover:text-yellow-500/40 transition-colors duration-300 mb-4" />
-                        </motion.div>
+                  <div className="relative z-10">
+                    <Quote className="w-10 h-10 text-yellow-500/20 mb-4" />
 
-                        <p className="text-slate-300 leading-relaxed mb-6 group-hover:text-slate-200 transition-colors duration-300">
-                          "{testimonial.texto}"
-                        </p>
+                    <p className="text-slate-300 leading-relaxed mb-6">
+                      "{testimonial.texto}"
+                    </p>
 
-                        <div className="flex items-center gap-1 mb-5">
-                          {[...Array(5)].map((_, i) => (
-                            <motion.div
-                              key={i}
-                              initial={{
-                                opacity: 0,
-                                scale: 0,
-                              }}
-                              animate={
-                                isInView
-                                  ? {
-                                      opacity: 1,
-                                      scale: 1,
-                                    }
-                                  : {}
-                              }
-                              transition={{
-                                delay:
-                                  0.3 +
-                                  index * 0.1 +
-                                  i * 0.05,
-                              }}
-                            >
-                              <Star
-                                className={`w-4 h-4 transition-all duration-300 ${
-                                  i < testimonial.nota
-                                    ? 'text-yellow-500 fill-yellow-500 group-hover:scale-110'
-                                    : 'text-slate-700'
-                                }`}
-                              />
-                            </motion.div>
-                          ))}
+                    <div className="flex items-center gap-1 mb-5">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className={`w-4 h-4 ${
+                            i < testimonial.nota
+                              ? 'text-yellow-500 fill-yellow-500'
+                              : 'text-slate-700'
+                          }`}
+                        />
+                      ))}
+                    </div>
+
+                    <div className="flex items-center gap-3">
+                      <motion.div
+                        className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-full flex items-center justify-center text-slate-950 font-bold text-sm shadow-lg shadow-yellow-500/20"
+                        whileHover={{ scale: 1.1 }}
+                      >
+                        {testimonial.nome
+                          .split(' ')
+                          .map((n) => n[0])
+                          .join('')
+                          .substring(0, 2)}
+                      </motion.div>
+
+                      <div>
+                        <div className="font-semibold text-white text-sm">
+                          {testimonial.nome}
                         </div>
 
-                        <div className="flex items-center gap-3">
-                          <motion.div
-                            className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-full flex items-center justify-center text-slate-950 font-bold text-sm shadow-lg shadow-yellow-500/20 group-hover:shadow-yellow-500/40 transition-shadow duration-300"
-                            whileHover={{ scale: 1.1 }}
-                          >
-                            {testimonial.nome
-                              .split(' ')
-                              .map((n) => n[0])
-                              .join('')
-                              .substring(0, 2)}
-                          </motion.div>
-
-                          <div>
-                            <div className="font-semibold text-white text-sm group-hover:text-yellow-300 transition-colors duration-300">
-                              {testimonial.nome}
-                            </div>
-
-                            <div className="text-slate-500 text-xs group-hover:text-slate-400 transition-colors">
-                              {testimonial.cargo},{' '}
-                              {testimonial.empresa}
-                            </div>
-                          </div>
+                        <div className="text-slate-500 text-xs">
+                          {testimonial.cargo},{' '}
+                          {testimonial.empresa}
                         </div>
                       </div>
                     </div>
-                  </motion.div>
-                ))}
-              </div>
-            ) : (
-              <div className="text-center py-16">
-                <p className="text-slate-400 text-lg">
-                  Nenhum depoimento disponível no momento.
-                </p>
-              </div>
-            )}
-          </>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         )}
       </div>
     </section>

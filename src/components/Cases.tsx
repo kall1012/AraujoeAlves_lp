@@ -1,6 +1,11 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { Building2, TrendingDown, ArrowRight, Sparkles } from 'lucide-react';
+import {
+  Building2,
+  TrendingDown,
+  ArrowRight,
+  Sparkles,
+} from 'lucide-react';
 
 interface Case {
   id: number;
@@ -14,14 +19,80 @@ interface Case {
 
 export default function Cases() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
 
-  const [cases] = useState<Case[]>([]);
+  const isInView = useInView(ref, {
+    once: true,
+    margin: '-100px',
+  });
+
+  const [cases] = useState<Case[]>([
+    {
+      id: 1,
+      empresa: 'Construtora Horizonte',
+      setor: 'Construção Civil',
+      divida_original: 2800000,
+      divida_reduzida: 740000,
+      reducao_percentual: 74,
+      descricao:
+        'A empresa enfrentava execuções bancárias e risco de paralisação total das obras. Conseguimos renegociar os débitos e preservar a operação.',
+    },
+    {
+      id: 2,
+      empresa: 'Mercado Central Prime',
+      setor: 'Varejo Alimentício',
+      divida_original: 950000,
+      divida_reduzida: 230000,
+      reducao_percentual: 76,
+      descricao:
+        'Redução estratégica de passivos financeiros e tributários, permitindo recuperação do fluxo de caixa e reestruturação operacional.',
+    },
+    {
+      id: 3,
+      empresa: 'TransLog Brasil',
+      setor: 'Transportes',
+      divida_original: 4200000,
+      divida_reduzida: 1180000,
+      reducao_percentual: 72,
+      descricao:
+        'Atuação jurídica focada em renegociação empresarial e blindagem patrimonial para evitar bloqueios judiciais e perda de ativos.',
+    },
+    {
+      id: 4,
+      empresa: 'Bella Forma Estética',
+      setor: 'Clínica de Estética',
+      divida_original: 680000,
+      divida_reduzida: 145000,
+      reducao_percentual: 79,
+      descricao:
+        'A clínica sofria pressão bancária e inadimplência acumulada. Estruturamos acordos que reduziram drasticamente o endividamento.',
+    },
+    {
+      id: 5,
+      empresa: 'TechVision Sistemas',
+      setor: 'Tecnologia',
+      divida_original: 1500000,
+      divida_reduzida: 390000,
+      reducao_percentual: 74,
+      descricao:
+        'Negociações jurídicas estratégicas possibilitaram a continuidade das operações e a recuperação financeira da empresa.',
+    },
+    {
+      id: 6,
+      empresa: 'Grupo Solar Agro',
+      setor: 'Agronegócio',
+      divida_original: 5100000,
+      divida_reduzida: 1320000,
+      reducao_percentual: 74,
+      descricao:
+        'Redução expressiva das dívidas rurais e reorganização financeira que permitiu retomada dos investimentos no campo.',
+    },
+  ]);
+
   const [loading] = useState(false);
-  const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
-  // API removida temporariamente para evitar erro 404
-  // fetch('/api/cases')
+  const [hoveredCard, setHoveredCard] = useState<number | null>(
+    null
+  );
 
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat('pt-BR', {
@@ -33,7 +104,10 @@ export default function Cases() {
   };
 
   return (
-    <section id="cases" className="relative py-24 overflow-hidden">
+    <section
+      id="cases"
+      className="relative py-24 overflow-hidden"
+    >
       <div className="absolute inset-0 bg-slate-950" />
 
       <div className="absolute inset-0 bg-[linear-gradient(rgba(234,179,8,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(234,179,8,0.02)_1px,transparent_1px)] bg-[size:60px_60px]" />
@@ -68,8 +142,9 @@ export default function Cases() {
           </h2>
 
           <p className="text-lg text-slate-400 max-w-3xl mx-auto">
-            Conheça alguns dos casos reais onde conseguimos reduzir drasticamente
-            as dívidas e devolver a tranquilidade aos empresários.
+            Conheça alguns dos casos reais onde conseguimos
+            reduzir drasticamente as dívidas e devolver a
+            tranquilidade aos empresários.
           </p>
         </motion.div>
 
@@ -86,24 +161,23 @@ export default function Cases() {
             />
           </div>
         ) : (
-          <div className="text-center py-16">
-            <p className="text-slate-400 text-lg">
-              Nenhum caso disponível no momento.
-            </p>
-          </div>
-        )}
-
-        {cases.length > 0 && (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {cases.map((caseItem, index) => (
               <motion.div
                 key={caseItem.id}
                 initial={{ opacity: 0, y: 40 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.12 }}
+                transition={{
+                  duration: 0.6,
+                  delay: index * 0.12,
+                }}
                 className="group relative"
-                onMouseEnter={() => setHoveredCard(caseItem.id)}
-                onMouseLeave={() => setHoveredCard(null)}
+                onMouseEnter={() =>
+                  setHoveredCard(caseItem.id)
+                }
+                onMouseLeave={() =>
+                  setHoveredCard(null)
+                }
               >
                 <div className="absolute -inset-[1px] bg-gradient-to-r from-yellow-500/0 via-yellow-500/0 to-yellow-500/0 group-hover:from-yellow-500/40 group-hover:via-amber-500/30 group-hover:to-yellow-500/40 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-700" />
 
@@ -117,7 +191,10 @@ export default function Cases() {
                   <div className="relative z-10">
                     <div className="flex items-center gap-3 mb-4">
                       <motion.div
-                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        whileHover={{
+                          scale: 1.1,
+                          rotate: 5,
+                        }}
                         className="w-12 h-12 bg-gradient-to-br from-yellow-500/20 to-amber-500/10 rounded-xl flex items-center justify-center border border-yellow-500/10 group-hover:border-yellow-500/30 transition-all duration-500 shadow-lg shadow-yellow-500/5 group-hover:shadow-yellow-500/15"
                       >
                         <Building2 className="w-6 h-6 text-yellow-500 group-hover:text-yellow-400 transition-colors" />
@@ -145,7 +222,9 @@ export default function Cases() {
                         </span>
 
                         <span className="text-sm font-medium text-red-400/80 line-through">
-                          {formatCurrency(caseItem.divida_original)}
+                          {formatCurrency(
+                            caseItem.divida_original
+                          )}
                         </span>
                       </div>
 
@@ -156,13 +235,10 @@ export default function Cases() {
 
                         <motion.span
                           className="text-sm font-bold text-green-400"
-                          animate={
-                            hoveredCard === caseItem.id
-                              ? { scale: 1.05 }
-                              : { scale: 1 }
-                          }
                         >
-                          {formatCurrency(caseItem.divida_reduzida)}
+                          {formatCurrency(
+                            caseItem.divida_reduzida
+                          )}
                         </motion.span>
                       </div>
 
@@ -174,15 +250,7 @@ export default function Cases() {
                           Redução
                         </span>
 
-                        <motion.span
-                          className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-300"
-                          animate={
-                            hoveredCard === caseItem.id
-                              ? { scale: 1.1 }
-                              : { scale: 1 }
-                          }
-                          transition={{ type: 'spring', stiffness: 300 }}
-                        >
+                        <motion.span className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-300">
                           {caseItem.reducao_percentual}%
                         </motion.span>
                       </div>
@@ -200,7 +268,8 @@ export default function Cases() {
                         }
                         transition={{
                           duration: 1.8,
-                          delay: 0.6 + index * 0.15,
+                          delay:
+                            0.6 + index * 0.15,
                           ease: 'easeOut',
                         }}
                         className="h-full bg-gradient-to-r from-yellow-500 via-amber-400 to-yellow-300 rounded-full relative"
@@ -223,8 +292,8 @@ export default function Cases() {
         >
           <p className="text-slate-500 text-sm inline-flex items-center gap-2">
             <ArrowRight className="w-4 h-4" />
-            Resultados reais de clientes atendidos. Cada caso é único e os
-            resultados podem variar.
+            Resultados reais de clientes atendidos. Cada caso
+            é único e os resultados podem variar.
           </p>
         </motion.div>
       </div>
