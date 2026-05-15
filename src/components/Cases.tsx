@@ -12,7 +12,7 @@ interface Case {
   empresa: string;
   setor: string;
   divida_original: number;
-  divida_reduzida: number;
+  divida_reduzida_para: number;
   reducao_percentual: number;
   descricao: string;
 }
@@ -31,7 +31,7 @@ export default function Cases() {
       empresa: 'Construtora Horizonte',
       setor: 'Construção Civil',
       divida_original: 1672507,
-      divida_reduzida: 167251,
+      divida_reduzida_para: 167251,
       reducao_percentual: 90,
       descricao:
         'A empresa enfrentava execuções bancárias e risco de paralisação total das obras. Conseguimos renegociar os débitos e preservar a operação.',
@@ -41,7 +41,7 @@ export default function Cases() {
       empresa: 'Mercado Central Prime',
       setor: 'Varejo Alimentício',
       divida_original: 950326,
-      divida_reduzida: 133046,
+      divida_reduzida_para: 133046,
       reducao_percentual: 86,
       descricao:
         'Redução estratégica de passivos financeiros e tributários, permitindo recuperação do fluxo de caixa e reestruturação operacional.',
@@ -51,7 +51,7 @@ export default function Cases() {
       empresa: 'TransLog Brasil',
       setor: 'Transportes',
       divida_original: 421522,
-      divida_reduzida: 75874,
+      divida_reduzida_para: 75874,
       reducao_percentual: 82,
       descricao:
         'Atuação jurídica focada em renegociação empresarial e blindagem patrimonial para evitar bloqueios judiciais e perda de ativos.',
@@ -61,7 +61,7 @@ export default function Cases() {
       empresa: 'Bella Forma Estética',
       setor: 'Clínica de Estética',
       divida_original: 680000,
-      divida_reduzida: 142800,
+      divida_reduzida_para: 142800,
       reducao_percentual: 79,
       descricao:
         'A clínica sofria pressão bancária e inadimplência acumulada. Estruturamos acordos que reduziram drasticamente o endividamento.',
@@ -71,7 +71,7 @@ export default function Cases() {
       empresa: 'TechVision Sistemas',
       setor: 'Tecnologia',
       divida_original: 1528200,
-      divida_reduzida: 366770,
+      divida_reduzida_para: 366770,
       reducao_percentual: 76,
       descricao:
         'Negociações jurídicas estratégicas possibilitaram a continuidade das operações e a recuperação financeira da empresa.',
@@ -81,7 +81,7 @@ export default function Cases() {
       empresa: 'Grupo Solar Agro',
       setor: 'Agronegócio',
       divida_original: 1826000,
-      divida_reduzida: 474760,
+      divida_reduzida_para: 474760,
       reducao_percentual: 74,
       descricao:
         'Redução expressiva das dívidas rurais e reorganização financeira que permitiu retomada dos investimentos no campo.',
@@ -237,7 +237,7 @@ export default function Cases() {
                           className="text-sm font-bold text-green-400"
                         >
                           {formatCurrency(
-                            caseItem.divida_reduzida
+                            caseItem.divida_reduzida_para
                           )}
                         </motion.span>
                       </div>
