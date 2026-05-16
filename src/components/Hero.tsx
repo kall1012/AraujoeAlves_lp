@@ -67,7 +67,7 @@ export default function Hero() {
             >
               <Sparkles className="w-4 h-4 text-yellow-500" />
               <span className="text-yellow-400 text-sm font-medium tracking-wide">
-                Especialistas em Recuperação Financeira EMPRESARIAL E INDIVIDUAL
+                ESPECIALISTAS EM RECUPERAÇÃO FINANCEIRA EMPRESARIAL E INDIVIDUAL
               </span>
             </motion.div>
 
