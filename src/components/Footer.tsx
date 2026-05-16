@@ -11,7 +11,7 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-4">
               <img
                 src="https://i.postimg.cc/mrB10S91/Logo-house-PQ-removebg-preview.png"
-                alt="Araujo & Alves Advogados"
+                alt="Araujo&Alves Advogados"
                 className="w-10 h-10 object-contain"
               />
               <div>

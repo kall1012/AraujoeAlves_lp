@@ -43,7 +43,7 @@ export default function FloatingCTA() {
             className="bg-slate-900 border border-yellow-500/30 rounded-lg px-4 py-2 shadow-lg max-w-xs"
           >
             <p className="text-sm text-white">
-              Converse pelo whatsapp e tire suas dúvidas!
+              Me chama no Whats agora!
             </p>
           </motion.div>
 
