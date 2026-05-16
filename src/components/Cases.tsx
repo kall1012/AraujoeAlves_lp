@@ -34,7 +34,7 @@ export default function Cases() {
       divida_reduzida_para: 167251,
       reducao_percentual: 90,
       descricao:
-        'O TESTE VERCEL FUNCIONOU. A empresa enfrentava execuções bancárias e risco de paralisação total das obras. Conseguimos renegociar os débitos e preservar a operação.',
+        'A empresa enfrentava execuções bancárias e risco de paralisação total das obras. Conseguimos renegociar os débitos e preservar a operação.',
     },
     {
       id: 2,
