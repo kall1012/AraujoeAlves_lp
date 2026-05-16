@@ -43,7 +43,7 @@ export default function CTA() {
 
             <div className="space-y-4 mb-8">
               {[
-                { icon: Phone, label: 'Telefone / WhatsApp', value: '(61) 98403-0871' },
+                { icon: Phone, label: 'Telefone / WhatsApp', value: '(61) 98233-5278' },
                 { icon: Mail, label: 'E-mail', value: 'priaara@gmail.com' },
                 { icon: MapPin, label: 'Endereço', value: 'QN 7 conjunto 5 - Riacho Fundo/DF' },
               ].map((item, index) => (
