@@ -6,7 +6,7 @@ import {
   MapPin,
   Clock,
   Shield,
-  Sparkles
+  Sparkles,
 } from 'lucide-react';
 
 export default function CTA() {
@@ -22,11 +22,14 @@ export default function CTA() {
     telefone: '',
     email: '',
     empresa: '',
+    valorDivida: '',
     mensagem: '',
   });
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
   ) => {
     setFormData({
       ...formData,
@@ -34,22 +37,33 @@ export default function CTA() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const mensagem = `Olá, quero falar com um especialista.
+    const assunto = 'Nova Solicitação de Análise Gratuita';
 
-*Nome:* ${formData.nome}
-*Telefone:* ${formData.telefone}
-*E-mail:* ${formData.email}
-*Empresa:* ${formData.empresa}
-*Mensagem:* ${formData.mensagem}`;
+    const corpo = `
+Nome: ${formData.nome}
 
-    const url = `https://wa.me/5561982335278?text=${encodeURIComponent(
-      mensagem
-    )}`;
+Telefone: ${formData.telefone}
 
-    window.open(url, '_blank');
+E-mail: ${formData.email}
+
+Empresa: ${formData.empresa}
+
+Valor da Dívida: ${formData.valorDivida}
+
+Mensagem:
+${formData.mensagem}
+    `;
+
+    const mailtoLink = `mailto:kleberaa1012@gmail.com?subject=${encodeURIComponent(
+      assunto
+    )}&body=${encodeURIComponent(corpo)}`;
+
+    if (typeof window !== 'undefined') {
+      window.location.href = mailtoLink;
+    }
   };
 
   return (
@@ -215,6 +229,7 @@ export default function CTA() {
                     placeholder="Seu e-mail"
                     value={formData.email}
                     onChange={handleChange}
+                    required
                     className="w-full bg-slate-900/80 border border-slate-700 focus:border-yellow-500 rounded-xl px-4 py-3 text-white outline-none transition-all"
                   />
 
@@ -226,6 +241,45 @@ export default function CTA() {
                     onChange={handleChange}
                     className="w-full bg-slate-900/80 border border-slate-700 focus:border-yellow-500 rounded-xl px-4 py-3 text-white outline-none transition-all"
                   />
+
+                  {/* Valor da Dívida */}
+                  <div>
+                    <label className="block text-sm text-slate-300 mb-2">
+                      Valor da Dívida
+                    </label>
+
+                    <select
+                      name="valorDivida"
+                      value={formData.valorDivida}
+                      onChange={handleChange}
+                      required
+                      className="w-full bg-slate-900/80 border border-slate-700 focus:border-yellow-500 rounded-xl px-4 py-3 text-white outline-none transition-all"
+                    >
+                      <option value="">
+                        Selecione uma opção
+                      </option>
+
+                      <option value="Mais de 100 mil">
+                        Mais de 100 mil
+                      </option>
+
+                      <option value="Mais de 250 mil">
+                        Mais de 250 mil
+                      </option>
+
+                      <option value="Mais de 500 mil">
+                        Mais de 500 mil
+                      </option>
+
+                      <option value="Mais de 750 mil">
+                        Mais de 750 mil
+                      </option>
+
+                      <option value="Mais de 1 milhão">
+                        Mais de 1 milhão
+                      </option>
+                    </select>
+                  </div>
 
                   <textarea
                     name="mensagem"
@@ -242,7 +296,7 @@ export default function CTA() {
                     whileTap={{ scale: 0.98 }}
                     className="w-full bg-gradient-to-r from-yellow-500 to-amber-500 hover:from-yellow-400 hover:to-amber-400 text-slate-950 font-bold px-8 py-4 rounded-xl transition-all duration-300 hover:shadow-xl hover:shadow-yellow-500/25"
                   >
-                    ENVIAR PARA WHATSAPP
+                    ENVIAR
                   </motion.button>
                 </form>
 
