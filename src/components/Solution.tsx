@@ -45,7 +45,7 @@ export default function Solution() {
   const ref = useRef(null);
 
   const isInView = useInView(ref, {
-    once: false,
+    once: true,
     margin: '-100px',
   });
 
@@ -53,48 +53,6 @@ export default function Solution() {
 
   return (
     <section id="solution" className="relative py-24 overflow-hidden">
-      {/* CSS Animation */}
-      <style>
-        {`
-          .text-animation {
-            -webkit-animation: texto 1.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-            animation: texto 1.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-          }
-
-          @-webkit-keyframes texto {
-            0% {
-              letter-spacing: -0.5em;
-              -webkit-filter: blur(12px);
-              filter: blur(12px);
-              opacity: 0;
-            }
-
-            100% {
-              letter-spacing: normal;
-              -webkit-filter: blur(0px);
-              filter: blur(0px);
-              opacity: 1;
-            }
-          }
-
-          @keyframes texto {
-            0% {
-              letter-spacing: -0.5em;
-              -webkit-filter: blur(12px);
-              filter: blur(12px);
-              opacity: 0;
-            }
-
-            100% {
-              letter-spacing: normal;
-              -webkit-filter: blur(0px);
-              filter: blur(0px);
-              opacity: 1;
-            }
-          }
-        `}
-      </style>
-
       {/* Background */}
       <div className="absolute inset-0 bg-slate-950" />
 
@@ -108,13 +66,13 @@ export default function Solution() {
       >
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
           <motion.span
             initial={{ opacity: 0, scale: 0.8 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.5 }}
             className="inline-block text-yellow-400 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-3 px-3 sm:px-4 py-1.5 rounded-full bg-yellow-500/10 border border-yellow-500/20 whitespace-nowrap"
           >
@@ -123,27 +81,14 @@ export default function Solution() {
             <span className="hidden sm:inline">Nossa Solução</span>
           </motion.span>
 
-          <h2
-            key={`title-${isInView}`}
-            className={`text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 ${
-              isInView ? 'text-animation' : ''
-            }`}
-          >
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
             Como Reduzimos Suas Dívidas em até{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-300">
               90%
             </span>
           </h2>
 
-          <p
-            key={`paragraph-${isInView}`}
-            className={`text-lg text-slate-400 max-w-3xl mx-auto ${
-              isInView ? 'text-animation' : ''
-            }`}
-            style={{
-              animationDelay: '0.2s',
-            }}
-          >
+          <p className="text-lg text-slate-400 max-w-3xl mx-auto">
             Nosso método comprovado em mais de 110 casos de sucesso segue um
             processo estruturado e transparente que garante os melhores
             resultados para sua empresa.
@@ -155,7 +100,7 @@ export default function Solution() {
             <motion.div
               key={step.number}
               initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.15 }}
               className="group relative"
               onMouseEnter={() => setHoveredIndex(index)}
@@ -228,7 +173,7 @@ export default function Solution() {
         {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.8 }}
           className="mt-16 text-center"
         >
