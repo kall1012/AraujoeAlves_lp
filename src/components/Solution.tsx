@@ -53,6 +53,46 @@ export default function Solution() {
 
   return (
     <section id="solution" className="relative py-24 overflow-hidden">
+      {/* CSS Animation */}
+      <style>
+        {`
+          .text-animation {
+            -webkit-animation: texto 1.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            animation: texto 1.6s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+          }
+
+          @-webkit-keyframes texto {
+            0% {
+              letter-spacing: -0.5em;
+              -webkit-filter: blur(12px);
+              filter: blur(12px);
+              opacity: 0;
+            }
+
+            100% {
+              -webkit-filter: blur(0px);
+              filter: blur(0px);
+              opacity: 1;
+            }
+          }
+
+          @keyframes texto {
+            0% {
+              letter-spacing: -0.5em;
+              -webkit-filter: blur(12px);
+              filter: blur(12px);
+              opacity: 0;
+            }
+
+            100% {
+              -webkit-filter: blur(0px);
+              filter: blur(0px);
+              opacity: 1;
+            }
+          }
+        `}
+      </style>
+
       {/* Background */}
       <div className="absolute inset-0 bg-slate-950" />
 
@@ -81,14 +121,14 @@ export default function Solution() {
             <span className="hidden sm:inline">Nossa Solução</span>
           </motion.span>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="text-animation text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
             Como Reduzimos Suas Dívidas em até{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-300">
               90%
             </span>
           </h2>
 
-          <p className="text-lg text-slate-400 max-w-3xl mx-auto">
+          <p className="text-animation text-lg text-slate-400 max-w-3xl mx-auto">
             Nosso método comprovado em mais de 110 casos de sucesso segue um
             processo estruturado e transparente que garante os melhores
             resultados para sua empresa.
