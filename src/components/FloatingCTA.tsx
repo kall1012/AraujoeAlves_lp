@@ -40,7 +40,7 @@ export default function FloatingCTA() {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3 }}
-            className="bg-slate-900 border border-yellow-500/30 rounded-lg px-4 py-2 shadow-lg max-w-xs"
+            className="bg-green-500 border border-green-400 rounded-lg px-4 py-2 shadow-lg max-w-xs"
           >
             <p className="text-sm text-white">
               Me chama no Whats agora!
