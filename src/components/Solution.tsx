@@ -30,7 +30,7 @@ const steps = [
     number: '03',
     title: 'Negociação com Credores',
     description:
-      'Negociamos diretamente com bancos, Receita Federal, INSS e fornecedores. Nossa experiência e relacionamento nos permitem alcançar reduções de até 90% sobre o valor original da dívida.',
+      'Negociamos diretamente com bancos. Nossa experiência e relacionamento nos permitem alcançar reduções de até 90% sobre o valor original da dívida.',
   },
   {
     icon: Rocket,
