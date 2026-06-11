@@ -16,7 +16,7 @@ const steps = [
     number: '01',
     title: 'Diagnóstico Completo',
     description:
-      'Analisamos todas as dívidas da sua empresa — bancárias, tributárias, trabalhistas e fornecedores. Mapeamos cada passivo e identificamos as melhores oportunidades de redução.',
+      'Analisamos todas as dívidas bancárias da sua empresa. Mapeamos tudo e identificamos as melhores oportunidades de redução.',
   },
   {
     icon: Gavel,
