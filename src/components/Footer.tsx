@@ -24,7 +24,7 @@ export default function Footer() {
               </div>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed">
-              Especialistas em redução de dívidas empresariais.
+              Especialista em reestruturação estratégica de dívidas bancárias.
               Recuperamos empresas endividadas e super endividadas
               com estratégia jurídica de excelência.
             </p>
