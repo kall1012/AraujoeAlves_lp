@@ -79,7 +79,7 @@ export default function Hero() {
               transition={{ delay: 0.3, duration: 0.6 }}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6"
             >
-              Reduzimos as dívidas da sua empresa em até{' '}
+              Reduzimos as dívidas bancárias da sua empresa em até{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-300">
                 90%
               </span>
@@ -92,7 +92,7 @@ export default function Hero() {
               className="text-lg text-slate-300 mb-8 leading-relaxed"
             >
               Oferecemos soluções jurídicas eficazes para quem precisa reorganizar suas finanças
-              e recuperar dívidas. Já auxiliamos clientes na recuperação de mais de{' '}
+              e recuperar dívidas bancárias. Já auxiliamos clientes na recuperação de mais de{' '}
               <strong className="text-white">R$ 1,5 milhão</strong>,
               permitindo que suas operações financeiras e empresariais voltem a crescer com força total.
             </motion.p>
