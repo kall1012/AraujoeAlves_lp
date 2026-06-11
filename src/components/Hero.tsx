@@ -69,7 +69,7 @@ export default function Hero() {
               <Sparkles className="w-4 h-4 text-yellow-500" />
 
               <span className="text-yellow-400 text-sm font-medium tracking-wide">
-                ESPECIALISTAS EM RECUPERAÇÃO FINANCEIRA EMPRESARIAL E INDIVIDUAL
+                ESPECIALISTA EM REESTRUTURAÇÃO ESTRATÉGICA DE PASSIVO BANCÁRIO
               </span>
             </motion.div>
 
